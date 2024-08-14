@@ -16,12 +16,16 @@
             <div id="boost">Boost: <span id="boost-value">100</span>%</div>
             <div id="shield">Shield: <span id="shield-value">0</span>%</div>
         </div>
-        <div id="power-up"></div>
         <div id="menu-screen" class="screen">
-            <h1>Car Rush</h1>
+            <h1>Car Rush V7</h1>
             <button id="start-button">Start Game</button>
+            <button id="car-select-button">Select Car</button>
             <button id="options-button">Options</button>
-            <button id="leaderboard-button">Leaderboard</button>
+        </div>
+        <div id="car-select-screen" class="screen hidden">
+            <h2>Select Your Car</h2>
+            <div id="car-options"></div>
+            <button id="car-select-back">Back</button>
         </div>
         <div id="game-over-screen" class="screen hidden">
             <h2>Game Over</h2>
@@ -38,31 +42,16 @@
         <div id="options-screen" class="screen hidden">
             <h2>Options</h2>
             <div class="option">
-                <label for="music-volume">Music Volume:</label>
-                <input type="range" id="music-volume" min="0" max="100" value="50">
-            </div>
-            <div class="option">
                 <label for="sfx-volume">SFX Volume:</label>
                 <input type="range" id="sfx-volume" min="0" max="100" value="50">
             </div>
             <div class="option">
-                <label for="difficulty">Difficulty:</label>
-                <select id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
+                <label for="music-volume">Music Volume:</label>
+                <input type="range" id="music-volume" min="0" max="100" value="50">
             </div>
-            <button id="save-options">Save</button>
             <button id="options-back">Back</button>
         </div>
-        <div id="leaderboard-screen" class="screen hidden">
-            <h2>Leaderboard</h2>
-            <ul id="leaderboard-list"></ul>
-            <button id="leaderboard-back">Back</button>
-        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

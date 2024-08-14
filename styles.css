@@ -10,8 +10,8 @@ body {
 }
 
 #game-container {
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    height: 600px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -33,16 +33,6 @@ body {
     justify-content: space-between;
     color: white;
     font-size: 14px;
-}
-
-#power-up {
-    width: 30px;
-    height: 30px;
-    background-color: green;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-    display: none;
 }
 
 .screen {
@@ -76,23 +66,42 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
+#car-options {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.car-option {
+    width: 80px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.car-option:hover {
+    transform: scale(1.1);
+}
+
+.car-option.selected {
+    border: 3px solid #4CAF50;
+}
+
 .option {
     margin: 10px 0;
 }
 
-#leaderboard-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-#leaderboard-list li {
-    margin: 5px 0;
+input[type="range"] {
+    width: 200px;
 }
