@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rush V2</title>
+    <title>Car Rush</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
         <div id="score">Score: <span id="score-value">0</span></div>
         <div id="level">Level: <span id="level-value">1</span></div>
         <div id="lives">Lives: <span id="lives-value">3</span></div>
+        <div id="boost">Boost: <span id="boost-value">100</span>%</div>
         <div id="power-up"></div>
         <div id="game-over" class="hidden">
             <h1>Game Over</h1>
@@ -19,7 +20,21 @@
             <p>High Score: <span id="high-score"></span></p>
             <button id="restart-button">Restart</button>
         </div>
+        <div id="pause-menu" class="hidden">
+            <h2>Game Paused</h2>
+            <button id="resume-button">Resume</button>
+            <button id="quit-button">Quit</button>
+        </div>
     </div>
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="collision-sound">
+        <source src="collision.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="power-up-sound">
+        <source src="power-up.mp3" type="audio/mpeg">
+    </audio>
     <script src="script.js"></script>
 </body>
 </html>
