@@ -28,6 +28,16 @@ body {
     left: 125px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    transition: left 0.1s ease-out;
+}
+
+#car.invincible {
+    animation: invincible 0.5s infinite alternate;
+}
+
+@keyframes invincible {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
 }
 
 .obstacle {
@@ -60,7 +70,17 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
 }
 
-#score, #level {
+#power-up {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    display: none;
+}
+
+#score, #level, #lives {
     position: absolute;
     top: 10px;
     color: white;
@@ -73,6 +93,11 @@ body {
 
 #level {
     right: 10px;
+}
+
+#lives {
+    left: 10px;
+    top: 40px;
 }
 
 #game-over {
