@@ -8,33 +8,61 @@
 </head>
 <body>
     <div id="game-container">
-        <div id="car"></div>
-        <div id="score">Score: <span id="score-value">0</span></div>
-        <div id="level">Level: <span id="level-value">1</span></div>
-        <div id="lives">Lives: <span id="lives-value">3</span></div>
-        <div id="boost">Boost: <span id="boost-value">100</span>%</div>
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="level">Level: <span id="level-value">1</span></div>
+            <div id="lives">Lives: <span id="lives-value">3</span></div>
+            <div id="boost">Boost: <span id="boost-value">100</span>%</div>
+            <div id="shield">Shield: <span id="shield-value">0</span>%</div>
+        </div>
         <div id="power-up"></div>
-        <div id="game-over" class="hidden">
-            <h1>Game Over</h1>
+        <div id="menu-screen" class="screen">
+            <h1>Car Rush</h1>
+            <button id="start-button">Start Game</button>
+            <button id="options-button">Options</button>
+            <button id="leaderboard-button">Leaderboard</button>
+        </div>
+        <div id="game-over-screen" class="screen hidden">
+            <h2>Game Over</h2>
             <p>Your Score: <span id="final-score"></span></p>
             <p>High Score: <span id="high-score"></span></p>
             <button id="restart-button">Restart</button>
+            <button id="menu-button">Main Menu</button>
         </div>
-        <div id="pause-menu" class="hidden">
+        <div id="pause-screen" class="screen hidden">
             <h2>Game Paused</h2>
             <button id="resume-button">Resume</button>
             <button id="quit-button">Quit</button>
         </div>
+        <div id="options-screen" class="screen hidden">
+            <h2>Options</h2>
+            <div class="option">
+                <label for="music-volume">Music Volume:</label>
+                <input type="range" id="music-volume" min="0" max="100" value="50">
+            </div>
+            <div class="option">
+                <label for="sfx-volume">SFX Volume:</label>
+                <input type="range" id="sfx-volume" min="0" max="100" value="50">
+            </div>
+            <div class="option">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="save-options">Save</button>
+            <button id="options-back">Back</button>
+        </div>
+        <div id="leaderboard-screen" class="screen hidden">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+            <button id="leaderboard-back">Back</button>
+        </div>
     </div>
-    <audio id="background-music" loop>
-        <source src="background-music.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="collision-sound">
-        <source src="collision.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="power-up-sound">
-        <source src="power-up.mp3" type="audio/mpeg">
-    </audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
